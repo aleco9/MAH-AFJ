@@ -1,0 +1,14 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {verifyAuthority,verifyMatrix,nonfunctional}=require('../scripts/quality/governance.cjs'),{hash}=require('../scripts/quality/contracts.cjs');
+function fixture(fn){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mah-flow-'));try{const root=dir+'/project',trust=dir+'/trust';fs.mkdirSync(root+'/specs',{recursive:true});fs.mkdirSync(trust);fn(root,trust);}finally{fs.rmSync(dir,{recursive:true,force:true});}}
+test('GOV01 regenerar baseline local no cambia referencia externa',()=>fixture((root,trust)=>{const b=JSON.stringify({files:{}});fs.writeFileSync(root+'/specs/criteria-baseline.json',b);fs.writeFileSync(trust+'/approved.json',JSON.stringify({files:{},baselineHash:hash(b)}));fs.writeFileSync(root+'/specs/criteria-baseline.json',b+' ');assert.throws(()=>verifyAuthority(root,trust),/BASELINE_NOT_REVIEWED/);}));
+test('GOV02 pin externo diferente y referencia dentro del prototipo fallan',()=>fixture((root,trust)=>{fs.writeFileSync(trust+'/approved.json','{}');assert.throws(()=>verifyAuthority(root,trust,'a'.repeat(64)),/TRUST_PIN/);assert.throws(()=>verifyAuthority(root,root),/TRUST_MUST_BE_EXTERNAL/);}));
+test('GOV03 referencia fuera del prototipo con pin correcto admite baseline',()=>fixture((root,trust)=>{const b=JSON.stringify({files:{}}),r=JSON.stringify({files:{},baselineHash:hash(b)});fs.writeFileSync(root+'/specs/criteria-baseline.json',b);fs.writeFileSync(trust+'/approved.json',r);assert.equal(verifyAuthority(root,trust,hash(r)).baselineHash,hash(b));}));
+test('GOV04 matrices y referencias documentales actuales son coherentes',()=>{const r=verifyMatrix(path.resolve(__dirname,'..'));assert.equal(r.scenarios,11);assert.equal(r.requirements,13);} );
+test('GOV05 PASS sin mediciones NF no acredita rendimiento',()=>fixture(root=>{fs.writeFileSync(root+'/specs/nonfunctional.json',JSON.stringify({criteria:[{status:'PASS',id:'L01'}]}));assert.throws(()=>nonfunctional(root,'v1'),/NF_EVIDENCE/);}));
+test('GOV06 resultado NF de otra versión no acredita la actual',()=>fixture(root=>{fs.writeFileSync(root+'/specs/nonfunctional.json',JSON.stringify({criteria:[{status:'PASS',versionEvidence:'old',measurements:{p95:1}}]}));assert.equal(nonfunctional(root,'new')[0].effectiveStatus,'NO_EVALUADO');}));
+
+const {decideNF}=require('../scripts/quality/governance.cjs');
+test('GOV07 umbral incumplido se califica FAIL aunque etiqueta diga PASS',()=>assert.equal(decideNF({status:'PASS',versionEvidence:'v1',threshold:{p95Ms:100,p99Ms:250},measurements:{p95Ms:101,p99Ms:200}},'v1'),'FAIL'));
+test('GOV08 métricas faltantes no acreditan un presupuesto',()=>assert.throws(()=>decideNF({status:'PASS',versionEvidence:'v1',threshold:{p95Ms:100,p99Ms:250},measurements:{}},'v1'),/NF_METRIC_MISSING/));

@@ -1,0 +1,23 @@
+{
+  "recordedDate": "2026-10-13",
+  "agentModel": "NO_VERIFICADO",
+  "instructions": {
+    "ai-native-sdlc": {
+      "source": "skill:ai-native-sdlc",
+      "sha256": "3100268011c8138d5969298e732cee3ff7d9e4bbf3f24404b09f4359e5b717a4"
+    },
+    "planificador-tecnico-software": {
+      "source": "skill:planificador-tecnico-software",
+      "sha256": "d938803af7ef81e699ffb1398e3c698b866f466429575260f08c05adbc8dd17a"
+    },
+    "ejecutor-tecnico-software": {
+      "source": "skill:ejecutor-tecnico-software",
+      "sha256": "9c2c7601e95119e66cb9578034a0b6aa9b93642c1290278b4cf5daa435b8fabe"
+    },
+    "auditor-tecnico-software": {
+      "source": "skill:auditor-tecnico-software",
+      "sha256": "ba33ca78d2b6cf9869521576f10a162afcf63d673521df61ae4b52c2780ed29b"
+    }
+  },
+  "limits": "Registro de fuentes de instrucciones usadas en este incremento; no aprobación humana ni prueba conductual del agente."
+}

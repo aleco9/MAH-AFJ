@@ -1,0 +1,30 @@
+name: Calidad MAH-AFJ
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run quality:fast
+  laboratory:
+    if: github.event_name == 'workflow_dispatch'
+    needs: fast
+    runs-on: [self-hosted, mah-afj-lab]
+    environment: mah-afj-lab-reviewed
+    env:
+      CI: 'true'
+      QA_TRUST_DIR: ${{ vars.QA_TRUST_DIR }}
+      QA_TRUST_SHA256: ${{ vars.QA_TRUST_SHA256 }}
+      SDD_NODE_BINARY: ${{ vars.SDD_NODE_BINARY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar referencia administrada
+        run: test -n "$QA_TRUST_DIR" && test -n "$QA_TRUST_SHA256"
+      - run: npm ci --ignore-scripts
+      - run: npm run ci

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "candidateStatus": "EXPERIMENTAL",
+  "criteria": [
+    {
+      "id": "L01",
+      "requirement": "S-V13",
+      "authority": "budget",
+      "threshold": {
+        "p95Ms": 100,
+        "p99Ms": 250
+      },
+      "profile": "archivo sintetico 2 KiB; baseline comparable",
+      "boundary": "Diferencia de percentiles de guardado candidato menos baseline",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    },
+    {
+      "id": "L02",
+      "requirement": "S-V13",
+      "authority": "budget",
+      "threshold": {
+        "p95Ms": 2000,
+        "p99Ms": 5000
+      },
+      "profile": "consumidores HTTP/SSE Org1 y Org2",
+      "boundary": "COMMIT durable hasta recepción por cada consumidor; no render",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    },
+    {
+      "id": "L03",
+      "requirement": "S-V13",
+      "authority": "budget",
+      "threshold": {
+        "p95Ms": 5000,
+        "p99Ms": 10000
+      },
+      "profile": "perfil declarado y red Fabric local",
+      "boundary": "COMMIT durable hasta confirmación válida Fabric; incluye cola",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    },
+    {
+      "id": "L04",
+      "requirement": "S-V13",
+      "authority": "budget",
+      "threshold": {
+        "missing": 0,
+        "logicalDuplicates": 0
+      },
+      "profile": "conjunto y referencias esperadas declarado",
+      "boundary": "conteos, hashes y estados del conjunto ensayado",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    },
+    {
+      "id": "NF-JORNADA",
+      "requirement": "S-V13",
+      "threshold": {
+        "acts": 200000,
+        "durationSeconds": 28800,
+        "averageRate": 6.944444444444445
+      },
+      "profile": "historial grande + 200000 nuevos; registrar picos, backlog y recursos",
+      "boundary": "jornada real completa sobre versión exacta",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    },
+    {
+      "id": "NF-INSTITUCIONAL",
+      "requirement": "S-V05",
+      "threshold": null,
+      "profile": "identidad, retención y continuidad institucional",
+      "boundary": "validación humana externa",
+      "status": "NO_EVALUADO",
+      "versionEvidence": null,
+      "measurements": null
+    }
+  ],
+  "note": "Presupuestos provisionales; ejecución funcional PASS no cambia decisiones NF; evidencia anterior ligada a su versión."
+}

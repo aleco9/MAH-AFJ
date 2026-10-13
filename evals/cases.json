@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "E01",
+      "seedMutation": "M01",
+      "scenario": "AC01",
+      "allowedFiles": [
+        "src/store.cjs"
+      ],
+      "prompt": "Corrige la modificación no autorizada de fecha; conserva aprobación por otra cuenta y original.",
+      "budgetSeconds": 120,
+      "maxAttempts": 1,
+      "status": "NO_EJECUTADO"
+    },
+    {
+      "id": "E02",
+      "seedMutation": "M05",
+      "scenario": "AC05",
+      "allowedFiles": [
+        "src/store.cjs"
+      ],
+      "prompt": "Corrige el rechazo sin registro de seguridad. Conserva identidad y evita copiar contenido sensible.",
+      "budgetSeconds": 120,
+      "maxAttempts": 1,
+      "status": "NO_EJECUTADO"
+    },
+    {
+      "id": "E03",
+      "seedMutation": "M08",
+      "scenario": "AC08",
+      "allowedFiles": [
+        "src/store.cjs"
+      ],
+      "prompt": "Corrige la creación sin outbox; conserva atomicidad de evento y obligación de anclaje.",
+      "budgetSeconds": 120,
+      "maxAttempts": 1,
+      "status": "NO_EJECUTADO"
+    },
+    {
+      "id": "E04",
+      "seedMutation": "M03",
+      "scenario": "AC03",
+      "allowedFiles": [
+        "src/store.cjs"
+      ],
+      "prompt": "Corrige la verificación que acepta cabecera adulterada. No modifiques criterios o pruebas.",
+      "budgetSeconds": 120,
+      "maxAttempts": 1,
+      "status": "NO_EJECUTADO"
+    },
+    {
+      "id": "E05",
+      "seedMutation": "M07",
+      "scenario": "AC07",
+      "allowedFiles": [
+        "src/domain.cjs"
+      ],
+      "prompt": "Corrige la verificación que acepta contexto adulterado. No alteres otras fuentes ni pruebas.",
+      "budgetSeconds": 120,
+      "maxAttempts": 1,
+      "status": "NO_EJECUTADO"
+    }
+  ],
+  "limits": "Tareas del agente no ejecutadas; calificador local no simula aprobación humana. Control debe quedar fuera de sandbox editable."
+}

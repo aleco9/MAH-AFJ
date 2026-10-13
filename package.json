@@ -1,0 +1,32 @@
+{
+  "name": "mah-afj-sdd",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/server.cjs",
+    "test": "bash scripts/quality/launch.sh --regression-only",
+    "ci": "bash scripts/ci.sh",
+    "evaluate": "node scripts/evaluate.cjs",
+    "test:unit": "bash scripts/quality/launch.sh --unit",
+    "test:coverage": "bash scripts/quality/launch.sh --regression-only --coverage",
+    "test:go": "cd chaincode && go test -count=1 -v ./... && go vet ./...",
+    "test:go:race": "cd chaincode && go test -race -count=1 ./...",
+    "quality": "bash scripts/quality/launch.sh",
+    "test:acceptance": "bash scripts/quality/launch.sh --acceptance-only",
+    "test:mutation": "bash scripts/quality/launch.sh --mutation-only",
+    "quality:baseline": "bash scripts/quality/launch.sh --baseline",
+    "quality:fast": "bash scripts/quality/launch.sh --fast",
+    "quality:review-reference": "bash scripts/quality/launch.sh --review-reference",
+    "evals:prepare": "bash scripts/quality/launch.sh --eval-prepare",
+    "evals:grade": "bash scripts/quality/launch.sh --eval-grade"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "1.14.6",
+    "@hyperledger/fabric-gateway": "1.12.1",
+    "pg": "8.23.0"
+  }
+}

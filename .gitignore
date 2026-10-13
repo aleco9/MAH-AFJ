@@ -1,0 +1,6 @@
+node_modules/
+.local/
+lab/
+chaincode/vendor/
+*.tar.gz
+.DS_Store

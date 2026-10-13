@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "authority": "Contrato operativo de prototipo, sin modificación de documentos históricos",
+  "modules": [
+    {
+      "id": "MOD01",
+      "file": "specs/actos-versiones.md",
+      "title": "Actos y versiones",
+      "externalGate": null
+    },
+    {
+      "id": "MOD02",
+      "file": "specs/fechas.md",
+      "title": "Fechas protegidas",
+      "externalGate": null
+    },
+    {
+      "id": "MOD03",
+      "file": "specs/identidad-permisos.md",
+      "title": "Identidad, permisos y rechazos",
+      "externalGate": null
+    },
+    {
+      "id": "MOD04",
+      "file": "specs/captura-sql.md",
+      "title": "Captura SQL y auditoría",
+      "externalGate": null
+    },
+    {
+      "id": "MOD05",
+      "file": "specs/hash-contexto.md",
+      "title": "Integridad y contexto semántico",
+      "externalGate": null
+    },
+    {
+      "id": "MOD06",
+      "file": "specs/outbox-anclaje.md",
+      "title": "Outbox y anclaje",
+      "externalGate": null
+    },
+    {
+      "id": "MOD07",
+      "file": "specs/fiscalizacion-operacion.md",
+      "title": "Fiscalización y operación",
+      "externalGate": "04-browser"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "AC01",
+      "module": "MOD02",
+      "given": "un acto con fecha protegida y sin aprobación",
+      "when": "se intenta adelantar su fecha",
+      "then": "se rechaza y conserva original",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC02",
+      "module": "MOD01",
+      "given": "una sentencia finalizada",
+      "when": "se intenta cambiar su texto directamente",
+      "then": "se rechaza y conserva una sola versión",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC03",
+      "module": "MOD05",
+      "given": "una referencia de cabecera registrada",
+      "when": "se adultera la cabecera por SQL",
+      "then": "la consulta devuelve MISMATCH",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC04",
+      "module": "MOD04",
+      "given": "una versión en tabla cubierta",
+      "when": "se comprometen cambios SQL A→B→A",
+      "then": "se publican capturas de ambos cambios con cuenta técnica sin inventar versiones aprobadas",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC05",
+      "module": "MOD03",
+      "given": "un fiscalizador autenticado sintético",
+      "when": "intenta modificar un acto",
+      "then": "se rechaza y registra cuenta/motivo sin copiar payload secreto",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC06",
+      "module": "MOD05",
+      "given": "el hash de archivo registrado en un evento",
+      "when": "se cambian coherentemente bytes/cuerpo/hash de su versión",
+      "then": "el evento no coincide con su archivo y se devuelve MISMATCH",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC07",
+      "module": "MOD05",
+      "given": "un evento canónico",
+      "when": "se cambia el actor en el contexto",
+      "then": "se devuelve MISMATCH",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC08",
+      "module": "MOD06",
+      "given": "un comando válido de creación",
+      "when": "se confirma la transacción",
+      "then": "evento y outbox pendiente están persistidos conjuntamente",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC09",
+      "module": "MOD06",
+      "given": "un evento pendiente",
+      "when": "falla la consulta remota",
+      "then": "no se presenta como CONFIRMED",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC10",
+      "module": "MOD02",
+      "given": "una solicitud revisada por otra cuenta",
+      "when": "se ejecuta el cambio de fecha aprobado",
+      "then": "se agrega una versión y conserva el original verificable",
+      "test": "test/acceptance.test.cjs"
+    },
+    {
+      "id": "AC11",
+      "module": "MOD07",
+      "given": "capturas consumidas en el laboratorio",
+      "when": "se consulta observabilidad",
+      "then": "se exponen salud y pendientes correctos",
+      "test": "test/acceptance.test.cjs"
+    }
+  ],
+  "nonFunctionalPending": [
+    "Jornada de 200000 actos/8h sobre versión concreta e historial representativo",
+    "Presupuestos de persistencia/notificación/anclaje medidos separadamente",
+    "Privacidad/retención/identidad institucional y continuidad productiva"
+  ]
+}

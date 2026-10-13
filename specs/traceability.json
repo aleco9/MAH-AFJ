@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "authorityCatalog": "specs/authority-catalog.json",
+  "rows": [
+    {
+      "needs": [
+        "N04"
+      ],
+      "requirements": [
+        "S-V05",
+        "S-V12"
+      ],
+      "stories": [
+        "B04"
+      ],
+      "qa": [
+        "QA06"
+      ],
+      "tests": [
+        "PT04"
+      ],
+      "useCases": [
+        "CU02"
+      ],
+      "designSections": [
+        "9",
+        "10"
+      ],
+      "scenario": "AC01",
+      "module": "MOD02",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N04"
+      ],
+      "requirements": [
+        "S-V12"
+      ],
+      "stories": [
+        "B04"
+      ],
+      "qa": [
+        "QA07"
+      ],
+      "tests": [
+        "PT10"
+      ],
+      "useCases": [
+        "CU06"
+      ],
+      "designSections": [
+        "9",
+        "10"
+      ],
+      "scenario": "AC02",
+      "module": "MOD01",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N02"
+      ],
+      "requirements": [
+        "S-V08"
+      ],
+      "stories": [
+        "B02"
+      ],
+      "qa": [
+        "QA09"
+      ],
+      "tests": [
+        "PT07"
+      ],
+      "useCases": [
+        "CU04"
+      ],
+      "designSections": [
+        "8",
+        "12"
+      ],
+      "scenario": "AC03",
+      "module": "MOD05",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N03"
+      ],
+      "requirements": [
+        "S-V03",
+        "S-V06"
+      ],
+      "stories": [
+        "B02"
+      ],
+      "qa": [
+        "QA03"
+      ],
+      "tests": [
+        "PT03"
+      ],
+      "useCases": [
+        "CU05"
+      ],
+      "designSections": [
+        "7",
+        "8"
+      ],
+      "scenario": "AC04",
+      "module": "MOD04",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N03"
+      ],
+      "requirements": [
+        "S-V05"
+      ],
+      "stories": [
+        "B04",
+        "B07"
+      ],
+      "qa": [
+        "QA06",
+        "QA12"
+      ],
+      "tests": [
+        "PT04"
+      ],
+      "useCases": [
+        "CU02"
+      ],
+      "designSections": [
+        "9",
+        "10"
+      ],
+      "scenario": "AC05",
+      "module": "MOD03",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N02"
+      ],
+      "requirements": [
+        "S-V08",
+        "S-V10"
+      ],
+      "stories": [
+        "B02",
+        "B05"
+      ],
+      "qa": [
+        "QA02",
+        "QA09"
+      ],
+      "tests": [
+        "PT07"
+      ],
+      "useCases": [
+        "CU04"
+      ],
+      "designSections": [
+        "8",
+        "11"
+      ],
+      "scenario": "AC06",
+      "module": "MOD05",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N03"
+      ],
+      "requirements": [
+        "S-V08",
+        "S-V11"
+      ],
+      "stories": [
+        "B02",
+        "B05"
+      ],
+      "qa": [
+        "QA02",
+        "QA09"
+      ],
+      "tests": [
+        "PT07"
+      ],
+      "useCases": [
+        "CU04"
+      ],
+      "designSections": [
+        "8",
+        "11"
+      ],
+      "scenario": "AC07",
+      "module": "MOD05",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N01"
+      ],
+      "requirements": [
+        "S-V03",
+        "S-V09"
+      ],
+      "stories": [
+        "B02"
+      ],
+      "qa": [
+        "QA02"
+      ],
+      "tests": [
+        "PT03"
+      ],
+      "useCases": [
+        "CU01"
+      ],
+      "designSections": [
+        "7",
+        "8"
+      ],
+      "scenario": "AC08",
+      "module": "MOD06",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N02"
+      ],
+      "requirements": [
+        "S-V08",
+        "S-V09"
+      ],
+      "stories": [
+        "B05",
+        "B06"
+      ],
+      "qa": [
+        "QA09",
+        "QA10"
+      ],
+      "tests": [
+        "PT09"
+      ],
+      "useCases": [
+        "CU04"
+      ],
+      "designSections": [
+        "11",
+        "12"
+      ],
+      "scenario": "AC09",
+      "module": "MOD06",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N04"
+      ],
+      "requirements": [
+        "S-V05",
+        "S-V12"
+      ],
+      "stories": [
+        "B04"
+      ],
+      "qa": [
+        "QA06",
+        "QA07"
+      ],
+      "tests": [
+        "PT04",
+        "PT10"
+      ],
+      "useCases": [
+        "CU02",
+        "CU06"
+      ],
+      "designSections": [
+        "9",
+        "10"
+      ],
+      "scenario": "AC10",
+      "module": "MOD02",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    },
+    {
+      "needs": [
+        "N05"
+      ],
+      "requirements": [
+        "S-V13"
+      ],
+      "stories": [
+        "B06"
+      ],
+      "qa": [
+        "QA11"
+      ],
+      "tests": [
+        "PT08"
+      ],
+      "useCases": [
+        "CU07"
+      ],
+      "designSections": [
+        "15"
+      ],
+      "scenario": "AC11",
+      "module": "MOD07",
+      "testFile": "test/acceptance.test.cjs",
+      "coverage": "Caso específico de laboratorio; no cumplimiento completo del requisito"
+    }
+  ],
+  "obligations": [
+    {
+      "requirement": "S-V01",
+      "scenarios": [],
+      "externalGate": null,
+      "status": "PENDING",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V02",
+      "scenarios": [],
+      "externalGate": "04-browser",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V03",
+      "scenarios": [
+        "AC04",
+        "AC08"
+      ],
+      "externalGate": "04-browser",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V04",
+      "scenarios": [],
+      "externalGate": "04-browser",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V05",
+      "scenarios": [
+        "AC01",
+        "AC05",
+        "AC10"
+      ],
+      "externalGate": null,
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V06",
+      "scenarios": [
+        "AC04"
+      ],
+      "externalGate": null,
+      "status": "PARTIAL",
+      "reason": "Triggers cubren UPDATE/DELETE en seis tablas; INSERT, DDL y archivos externos no cubiertos; no CDC/WAL."
+    },
+    {
+      "requirement": "S-V07",
+      "scenarios": [],
+      "externalGate": "04-browser",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V08",
+      "scenarios": [
+        "AC03",
+        "AC06",
+        "AC07",
+        "AC09"
+      ],
+      "externalGate": "03-fabric",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V09",
+      "scenarios": [
+        "AC08",
+        "AC09"
+      ],
+      "externalGate": "03-fabric",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V10",
+      "scenarios": [
+        "AC06"
+      ],
+      "externalGate": "03-fabric",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V11",
+      "scenarios": [
+        "AC07"
+      ],
+      "externalGate": "03-fabric",
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V12",
+      "scenarios": [
+        "AC01",
+        "AC02",
+        "AC10"
+      ],
+      "externalGate": null,
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    },
+    {
+      "requirement": "S-V13",
+      "scenarios": [
+        "AC11"
+      ],
+      "externalGate": null,
+      "status": "PARTIAL",
+      "reason": "Cobertura local parcial; identidades/administración institucional no acreditadas."
+    }
+  ]
+}
