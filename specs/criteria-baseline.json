@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "reviewReason": "Derivación pública autorizada: rutas de instrucciones portables y README sin referencias privadas; criterios AC intactos",
-  "previousBaselineHash": "8c9315485e6077006856313be1341a833505fc72181767f562316fc2aaaf1378",
+  "reviewReason": "Adaptación explícita de fixture GOV01 a CI: suministra pin válido del fixture antes de comprobar rechazo de baseline; criterio sin relajar",
+  "previousBaselineHash": "82eeaef0a5b9bc6b7a60604af7878b46196cb5296bdce756019714002f136668",
   "files": {
     "test/acceptance.test.cjs": "623d21afd26932a480330fd1039eac297ff63d5cf5a8c7c041a9d594f55fd0fe",
     "test/agent-evals-unit.test.cjs": "7436164ead39a8bba13f2d1f7c884d660a97075faf2835bb29a8310c0c34a9f4",
@@ -11,7 +11,7 @@
     "test/domain-unit.test.cjs": "4831335da3d9bfb994b029e9fdcc17121e0d76a4e98cb874930bef41102f6c9c",
     "test/domain.test.cjs": "5ee05448f22ee0d932e3b81f52089ac6d3b4e8a9ed3b16950473c9b6da444e1c",
     "test/flow-unit.test.cjs": "cca60bc70f45ec225e530a347f826e95ef011b09917384c0e8065e21125125db",
-    "test/governance-unit.test.cjs": "44cdf9ad207b75445b36eb80f4eedc1c751581cc989cad22a0dd06e3575a3920",
+    "test/governance-unit.test.cjs": "cd1ed81f4f8e85a7c808c0bafa1092e994b509f186984b1a32cfadb639e2096a",
     "test/http-unit.test.cjs": "a634195bc5d14244d03aaa6e08a8bde4367ff69a5f154a0fd6dac428d26bb238",
     "test/http.test.cjs": "0fc19b3710537b76fc223555d1f67d74cd1f5168491f3ed2f9a956016ef30177",
     "test/integration.test.cjs": "b2964ecb38a1b6ea15c2280947494d70fe2cdca3d9f09f77a8f89b9291b393af",
