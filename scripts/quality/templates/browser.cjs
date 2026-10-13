@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-const {chromium}=require('/Users/aleco9/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'playwright');
 const root=path.resolve(process.env.SDD_PROJECT_ROOT);const cfg=require(root+'/src/config.cjs').load();const {Store}=require(root+'/src/store.cjs'),{application}=require(root+'/src/server.cjs'),{openLedger,Worker}=require(root+'/src/ledger.cjs');
 const results=[];const actor={user:'juez',role:'OPERADOR'},appr={user:'aprobador',role:'APROBADOR'};const cmd=(action,docId,extra={})=>({action,docId,commandId:crypto.randomUUID(),...extra});
 let store,app,browser,worker;const ledgers={};const shots=path.resolve(__dirname,'../../../output/playwright',path.basename(__dirname));fs.mkdirSync(shots,{recursive:true});

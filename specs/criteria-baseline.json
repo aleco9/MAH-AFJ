@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "reviewReason": "Adaptación explícita de fixture GOV01 a CI: suministra pin válido del fixture antes de comprobar rechazo de baseline; criterio sin relajar",
-  "previousBaselineHash": "82eeaef0a5b9bc6b7a60604af7878b46196cb5296bdce756019714002f136668",
+  "reviewReason": "CI de laboratorio autorizado: solo main manual, token read-only, configuración privada externa y Playwright portable; criterios intactos",
+  "previousBaselineHash": "6152acb6299566ae8ae10793b9fcf88d0e1502e91632be5a6510be0b46148c9b",
   "files": {
     "test/acceptance.test.cjs": "623d21afd26932a480330fd1039eac297ff63d5cf5a8c7c041a9d594f55fd0fe",
     "test/agent-evals-unit.test.cjs": "7436164ead39a8bba13f2d1f7c884d660a97075faf2835bb29a8310c0c34a9f4",
@@ -50,13 +50,13 @@
     "scripts/quality/run.cjs": "86c784f2e52c3545ba75d65a554680e877f19e748028cd1e5a944121a539febd",
     "scripts/quality/schema.cjs": "d403ec73a1fdf8d7e07e1b4d31fd05fbe48e4b197446425ea42357fddc049bdc",
     "scripts/quality/templates/adversos.test.cjs": "12ba2b92a908d5018fd38b3ad3b5697291a2352045144439be642565714a4b80",
-    "scripts/quality/templates/browser.cjs": "2507cbf39e161f6c8705c5aea9ad42c87ccb46ce5bc3561f36c7d6afa8f276e0",
+    "scripts/quality/templates/browser.cjs": "6d8165eda8d304a5b94b15bce8185798c92092c4bf5d273bd7950f1fa6e98c42",
     "scripts/quality/templates/fabric-adverso.test.cjs": "1cc6fcb9448b85ead9346cb80faa7d0b470c200d027b50c6c13eb273a7b2eab8",
     "evals/cases.json": "f4fd588ded9fa8678efd5f30253675da9eba6cac18a6a913b1665f1e773aa3ec",
     "evals/grade.cjs": "536e3d64401d33d73d3eddeb3969a39e7965a8c3d431a2f9c5543664e3bed2cd",
     "evals/grader.cjs": "c076765711500f9f4876f5bee0ca887c2ff7fb80068b103d248e5dd08fe4bac5",
     "evals/prepare.cjs": "151bcd7c3f8e5233f20ce17b0763bbf05296ee5e00a8f10f2c47a12c734c1f67",
-    ".github/workflows/quality.yml": "2689dd06833c8d099f2e0b8c26ac096196d35b76f643cedf1fb026c62c6dc737",
+    ".github/workflows/quality.yml": "0e81d6afc9e1988a8e0100bbba622bd54ec48933b1bc077c90ff8b39492a92f4",
     "package.json": "29e90f1c387d873f4958b2abe5c3920c85d4ec1e5899ca93f7c9b1b81d164140",
     "package-lock.json": "c0ec25868d6f3b48afe9d6adeb75ba3c50cebe6e671766519308c50f81cacc68",
     "scripts/ci.sh": "a5ceed95af4777434b68bbd4ac95cc0354e43998c81b1883aaa73c02ea88ae86"

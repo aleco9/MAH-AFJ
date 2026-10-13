@@ -3,6 +3,8 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   fast:
     runs-on: ubuntu-latest
@@ -13,7 +15,7 @@ jobs:
           node-version: '24'
       - run: npm run quality:fast
   laboratory:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: fast
     runs-on: [self-hosted, mah-afj-lab]
     environment: mah-afj-lab-reviewed
@@ -22,9 +24,13 @@ jobs:
       QA_TRUST_DIR: ${{ vars.QA_TRUST_DIR }}
       QA_TRUST_SHA256: ${{ vars.QA_TRUST_SHA256 }}
       SDD_NODE_BINARY: ${{ vars.SDD_NODE_BINARY }}
+      MAH_AFJ_LAB_CONFIG: ${{ vars.MAH_AFJ_LAB_CONFIG }}
+      PLAYWRIGHT_MODULE_PATH: ${{ vars.PLAYWRIGHT_MODULE_PATH }}
     steps:
       - uses: actions/checkout@v4
       - name: Comprobar referencia administrada
         run: test -n "$QA_TRUST_DIR" && test -n "$QA_TRUST_SHA256"
+      - name: Configuración local fuera de Git
+        run: mkdir -p .local && cp "$MAH_AFJ_LAB_CONFIG" .local/config.json && chmod 600 .local/config.json
       - run: npm ci --ignore-scripts
       - run: npm run ci
