@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "reviewReason": "CI de laboratorio autorizado: solo main manual, token read-only, configuración privada externa y Playwright portable; criterios intactos",
-  "previousBaselineHash": "6152acb6299566ae8ae10793b9fcf88d0e1502e91632be5a6510be0b46148c9b",
+  "reviewReason": "Snapshot público no contiene scripts raíz auxiliares: omitir globs vacíos en chequeo sintáctico sin omitir archivos existentes ni pruebas",
+  "previousBaselineHash": "cab07dcf99df19323c4b0bb1063ba2b57f4d163ba9678dd965f84f32967f4ba1",
   "files": {
     "test/acceptance.test.cjs": "623d21afd26932a480330fd1039eac297ff63d5cf5a8c7c041a9d594f55fd0fe",
     "test/agent-evals-unit.test.cjs": "7436164ead39a8bba13f2d1f7c884d660a97075faf2835bb29a8310c0c34a9f4",
@@ -59,6 +59,6 @@
     ".github/workflows/quality.yml": "0e81d6afc9e1988a8e0100bbba622bd54ec48933b1bc077c90ff8b39492a92f4",
     "package.json": "29e90f1c387d873f4958b2abe5c3920c85d4ec1e5899ca93f7c9b1b81d164140",
     "package-lock.json": "c0ec25868d6f3b48afe9d6adeb75ba3c50cebe6e671766519308c50f81cacc68",
-    "scripts/ci.sh": "a5ceed95af4777434b68bbd4ac95cc0354e43998c81b1883aaa73c02ea88ae86"
+    "scripts/ci.sh": "0846a4e1c09aac95cbead6b1b25bac652383871eb4c094b1b2a6c398b963433b"
   }
 }

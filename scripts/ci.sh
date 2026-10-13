@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+shopt -s nullglob
 cd "$(dirname "$0")/.."
 NODE_BINARY="${SDD_NODE_BINARY:-$HOME/.nvm/versions/node/v24.15.0/bin/node}"
 "$NODE_BINARY" -e "if(Number(process.versions.node.split('.')[0])<24)process.exit(1)"
